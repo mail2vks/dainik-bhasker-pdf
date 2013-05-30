@@ -1,0 +1,35 @@
+apply plugin: 'java'
+
+defaultTasks 'clean','build'
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+	main {
+		java {
+			srcDir 'src'
+		}
+	}
+}
+
+dependencies {
+    compile "commons-logging:commons-logging:+"
+    compile "joda-time:joda-time:+"
+    compile "org.apache.pdfbox:pdfbox:+"
+}
+
+jar {
+    manifest {
+        attributes("Main-Class":"Init")
+    }
+
+    dependsOn configurations.runtime
+
+    from { 
+    	configurations.runtime.collect { 
+    		it.isDirectory() ? it : zipTree(it) 
+    		} 
+    	}
+}
