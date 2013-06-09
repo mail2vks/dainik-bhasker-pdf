@@ -80,9 +80,9 @@ public class Init {
 		String directoryName = now.toString(fmt) + DASH + configuration.get(chosenCityCode + NAME_CONFIG_SUFFIX).toString();
 
 		new File(directoryName).mkdir();
-		//getAllPages(MAIN_SECTION, chosenCityCode);
+		getAllPages(MAIN_SECTION, chosenCityCode);
 		getAllPages(CITY_SECTION, chosenCityCode);
-		//getAllPages(DBSTAR_SECTION, chosenCityCode);
+		getAllPages(DBSTAR_SECTION, chosenCityCode);
 
 		mergeAllPages(directoryName);
 
