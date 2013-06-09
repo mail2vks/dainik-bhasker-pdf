@@ -1,2 +1,5 @@
 .gradle
+*.ipr
+*.iws
 build
+out
