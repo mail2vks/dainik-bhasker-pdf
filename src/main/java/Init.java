@@ -215,6 +215,7 @@ public class Init {
 				bos.write(buffer, 0, count);
 				System.out.print(".");
 			}
+			System.out.print("\n");
 			logInfo("Read " + countKBRead / 1024 + " KB");
 			if (countKBRead == 0) {
 				throw new Exception("No bytes read from stream");
